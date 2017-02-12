@@ -1,16 +1,16 @@
-import pandas as pd
-import json
-import requests
-import re
-from nltk.corpus import stopwords
-from nltk.stem.porter import PorterStemmer
-import os
+# import pandas as pd
+# import json
+# import requests
+# import re
+# from nltk.corpus import stopwords
+# from nltk.stem.porter import PorterStemmer
+# import os
 from flask import Flask, render_template
-stopwords = set(stopwords.words("english"))
-stemmer = PorterStemmer()
-from watson_developer_cloud import AuthorizationV1 as WatsonAuthorization
-from watson_developer_cloud import AlchemyLanguageV1 as AlchemyLanguage
-alchemy = AlchemyLanguage(api_key=os.environ.get("ALCHEMY_API_KEY"))
+# stopwords = set(stopwords.words("english"))
+# stemmer = PorterStemmer()
+# from watson_developer_cloud import AuthorizationV1 as WatsonAuthorization
+# from watson_developer_cloud import AlchemyLanguageV1 as AlchemyLanguage
+# alchemy = AlchemyLanguage(api_key=os.environ.get("ALCHEMY_API_KEY"))
 
 
 def URL_builder(api_key, begin_date, end_date, page=0):
