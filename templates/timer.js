@@ -14,7 +14,7 @@ var leftTheHouse = 3;
 var gettingReady = 2;
 var justWokeUp = 1;
 var years;
-var data = 10;
+var data = {{result}};
 switch(data){
   case(dead):
     years = 1;
@@ -55,6 +55,7 @@ switch(data){
 =======
 >>>>>>> origin/master
 function timer(){
+  console.log(data)
   document.getElementById('timer').innerHTML =   years + ":" + months + ":" + days + ":" + hours + ":" + minutes + ":" + seconds;
   seconds--;
   console.log("")
