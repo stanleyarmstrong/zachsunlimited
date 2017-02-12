@@ -1,0 +1,7 @@
+Flask
+gunicorn
+pandas
+json
+requests
+re
+os
