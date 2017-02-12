@@ -1,5 +1,7 @@
-var searchTerm = "Donald Trump";
 $("#doomBtn").click(function(){
+  var searchRandom = ["Doomsday", "Donald Trump", "Iran", "Earthquakes", "Hurricanes", "War", "Fear", "Communism", "Fascism", "International Relations"];
+  var searchTerm = searchRandom[Math.floor(Math.random()*10)];
+
   window.alert("Doom Button clicked!");
   // searchTerm = $("#searchInput")[0].value;
   if (!searchTerm) {
