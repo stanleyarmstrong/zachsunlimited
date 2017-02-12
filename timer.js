@@ -14,7 +14,7 @@ var leftTheHouse = 3;
 var gettingReady = 2;
 var justWokeUp = 1;
 var years;
-var data;
+var data = 10;
 switch(data){
   case(dead):
     years = 1;

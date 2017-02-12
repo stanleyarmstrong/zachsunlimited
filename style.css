@@ -1,5 +1,11 @@
 body{
+  text-align: center;
   background-color: rgb(255,26,0);
   color: rgb(255,215,0);
+
+}
+.timer{
+  padding : 200px;
+
 
 }
