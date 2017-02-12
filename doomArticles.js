@@ -1,7 +1,6 @@
 $("#doomBtn").click(function(){
   var searchRandom = ["deadly", "earthquake", "philippines", "trump", "iranian", "president", "slap", "wrist", "migrants", "muslim", "scottish", "popes", "pray", "myanmar", "wall", "supreme leader", "hong kong"]
   var searchTerm = searchRandom[Math.floor(Math.random()*17)];
-  window.alert("Doom Button clicked!");
   // searchTerm = $("#searchInput")[0].value; // this is with user input
   if (!searchTerm) {
     window.alert("No Search Query Detected");
