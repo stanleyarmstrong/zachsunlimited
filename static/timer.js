@@ -50,10 +50,10 @@ switch(data){
       years = 666;
       break;
 }
-<<<<<<< HEAD
+/*<<<<<<< HEAD
 
 =======
->>>>>>> origin/master
+>>>>>>> origin/master*/
 function timer(){
   console.log(data)
   document.getElementById('timer').innerHTML =   years + ":" + months + ":" + days + ":" + hours + ":" + minutes + ":" + seconds;
