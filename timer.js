@@ -50,11 +50,10 @@ switch(data){
       years = 666;
       break;
 }
-console.log(years);
 function timer(){
   document.getElementById('timer').innerHTML =   years + ":" + months + ":" + days + ":" + hours + ":" + minutes + ":" + seconds;
   seconds--;
-  console.log(seconds);
+  console.log("")
   console.log("A second has passed.");
   if(seconds === 0 ){
     minutes--;
@@ -82,4 +81,5 @@ function timer(){
     console.log("A year has passed.")
     months = 12;
   }
-}
+
+};
