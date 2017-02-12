@@ -3,41 +3,275 @@
 <head>
   <title>Hackathon 2017 ZAX</title>
   <meta charset="utf-8">
-  <!-- <meta name = "viewport" content="width= device-width , initial-scale = 1 ">
-  --> <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
-  <link rel = "stylesheet" type = "text/css" href = "templates/style.css">
+  <meta name = "viewport" content="width= device-width , initial-scale = 1 ">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
   <link rel = "icon" href = "http://www.metalinjection.net/wp-content/uploads/2014/06/Soviet-Sickle.png">
-  <link rel = "stylesheet" type="text/css" href="templates/doomArticles.css">
+
+
+
+
+<!--Stanley's css file-->
+<style>
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+html {
+  background: url('https://upload.wikimedia.org/wikipedia/commons/4/45/MtRedoubtedit1.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+a{text-decoration: none;}
+
+body{
+  text-align: center;
+  font-family: "Press Start 2P";
+}
+button{
+  font-family: "Press Start 2P";
+  background-color: red;
+  border: none;
+  cursor: pointer;
+}
+button:hover{
+  background-color: gold;
+}
+.timer{
+  margin: 20%;
+}
+</style>
+
+<!-- Kevin's Dooms styles -->
+<style>
+.displayBox {
+  background-color: rgb(210, 224, 219);
+  margin: 2%;
+  padding: 1%;
+  cursor: pointer;
+  border-style: 4px solid transparent;
+  border-radius: 4px;
+  /* to make boxes grow on hover */
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  -moz-transition-property: transform;
+  -ms-transition-property: transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+}
+.displayBox p {
+  color: rgb(86, 129, 140);
+}
+.displayBox:hover,
+.displayBox:active,
+.displayBox:focus {
+  -webkit-transform: scale(1.04);
+  -moz-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  -o-transform: scale(1.04);
+  transform: scale(1.04);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  animation-duration: 1s;
+  animation-name: fadeInUp;
+}
+</style>
+
 </head>
 
 <body onload = "setInterval( timer, 1000)" >
   <div class = "timer">
   <h1 id = "doomsday">Time Left In The World:</h1>
-  <div id="watsonNotes"></div>
-
-
-
-  <h2 id = "timer" >
-
-
-  </h2>
-
-
+  <h2 id = "timer" > </h2>
   <h2>
     Y:M:D:H:M:S
-
   </h2>
+  <div id="watSon"></div>
+  <p>How close are we to Doomsday?<p>
 
-  <button id="doomBtn">How Close Are We to Doomsday?</button>
+  <button id="doomBtn">Ask our AI</button>
   <div id="dataDiv"></div>
-
-  <footer>Coded by Team UnlimiZax | Powered by
-
 </div>
 
+<footer>Built by Team ZaxUnlmtd | Powered by IBM Watson | Button | New York Times API | Wikipedia API </footer>
+
+
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="templates/doomArticles.js"></script>
-<script src = "templates/timer.js"> </script>
+
+<!-- <script src = "timer.js"> </script> -->
+<script>
+var minutes = 60;
+var months = 12;
+var hours = 24;
+var days = 30;
+var seconds = 60;
+var dead = 10;
+var deathBed = 9;
+var bleeding = 8;
+var cut = 7;
+var aboutToBeStabbed  = 6;
+var guyConfrontingYou = 5;
+var walkingAlong = 4;
+var leftTheHouse = 3;
+var gettingReady = 2;
+var justWokeUp = 1;
+var years;
+var data = {{result}};
+switch(data){
+  case(dead):
+    years = 1;
+    break;
+  case(deathBed):
+    years  = 5;
+    break;
+  case(bleeding):
+    years = 10;
+    break;
+  case(cut):
+    years = 50;
+    break;
+  case(aboutToBeStabbed):
+    years = 100;
+    break;
+  case(guyConfrontingYou):
+    years  = 500;
+    break;
+  case(walkingAlong):
+      years = 1000
+      break;
+  case(leftTheHouse):
+      years = 5000;
+      break;
+  case(gettingReady):
+      years = 10000;
+      break;
+  case(justWokeUp):
+      years = 50000;
+      break;
+  default:
+      years = 666;
+      break;
+}
+/*<<<<<<< HEAD
+
+=======
+>>>>>>> origin/master*/
+function timer(){
+  console.log("Passed in data: " + data)
+  document.getElementById('timer').innerHTML =   years + ":" + months + ":" + days + ":" + hours + ":" + minutes + ":" + seconds;
+  seconds--;
+  console.log("")
+  console.log("A second has passed.");
+  if(seconds === 0 ){
+    minutes--;
+    console.log(minutes);
+    console.log("A minute has passed.");
+
+    seconds = 60;
+
+  }
+  if(minutes === 0){
+    hours--;
+    console.log(hours);
+    console.log("An hour has passed.");
+    minutes = 60;
+  }
+  if(hours === 0){
+    days--;
+    console.log(days);
+    console.log("A day has passed.")
+    hours = 24;
+  }
+  if(days === 0){
+    months--;
+    console.log(months);
+    console.log("A month has passed.");
+    days = 30;
+  }
+  if(months === 0){
+    years--;
+    console.log(years);
+    console.log("A year has passed.")
+    months = 12;
+  }
+
+};
+</script>
+
+<!-- <script src="doomArticles.js"></script> -->
+<script>
+$("#doomBtn").click(function(){
+  document.getElementById('watSon').innerHTML = "<p>According to IBM's Watson, our danger level today is : " + data + " </p>";
+
+  var searchRandom = ["deadly", "earthquake", "philippines", "trump", "iranian", "president", "slap", "wrist", "migrants", "muslim", "scottish", "popes", "pray", "myanmar", "wall", "supreme leader", "hong kong"]
+  var searchTerm = searchRandom[Math.floor(Math.random()*17)];
+  // searchTerm = $("#searchInput")[0].value; // this is with user input
+  if (!searchTerm) {
+    window.alert("No Search Query Detected");
+    return;
+  }
+
+  $.ajax({
+    url: 'https://en.wikipedia.org/w/api.php',
+    dataType: 'jsonp',
+    data: {
+      action: 'opensearch',
+      search: searchTerm,
+      limit: 10
+      },
+    success: function(data) {
+      $("#dataDiv").html('');
+      if(!data[1][0]){
+        $("#dataDiv").append('<div class="fadeInUp displayBox"><h2>' + 'No Data Returned' + ' </h2><p>' + 'Nothing related to this search term was found in the Wikipedia database. Please try a different search term.' + '</p></div></a>');
+      }
+
+      /* Troubleshooting
+      console.log(data); //
+      console.log(data[1][0]); //Title
+      console.log(data[2][0]); //Summary
+      console.log(data[3][0]); //Link */
+
+      // Creates information boxes with data
+      for (var i = 0; i < data[1].length; i++) {
+        $("#dataDiv").append('<a href="' + data[3][i] + '" target="_blank"><div class="fadeInUp displayBox"><h2>' + data[1][i] + ' </h2><p>' + data[2][i] + '</p></div></a>');
+      }
+    }
+  });
+// end of search button function
+  });
+</script>
+<div data-bttnio-id="btn-7426e86f09c74bf5"
+     data-bttnio-context='{ "user_location": { "latitude": 40.7382869, "longitude": -73.9823721 } }'>
+
+   </div>
+<script>
+
+window.ButtonWebConfig = {
+  applicationId: 'app-2bfccb0184db6ac5'
+};
+(function(u,s,e,b,t,n){
+  u['__bttnio']=b;u[b]=u[b]||function(){(u[b].q=u[b].q||[]).push(arguments)};t=s.createElement(e);n=s.getElementsByTagName(e)[0];t.async=1;t.src='https://web.btncdn.com/v1/button.js';n.parentNode.insertBefore(t,n)
+})(window, document, 'script', 'bttnio');
+</script>
 
 
 
