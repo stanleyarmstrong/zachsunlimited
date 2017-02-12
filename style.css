@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+html {
+  background: url('https://upload.wikimedia.org/wikipedia/commons/4/45/MtRedoubtedit1.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+a{text-decoration: none;}
+
+body{
+  text-align: center;
+  font-family: "Press Start 2P";
+  /*background-color: rgb(255,26,0);
+  color: rgb(255,215,0);
+<<<<<<< HEAD
+  font-family: 'Orbitron', sans-serif;
+
+}
+.timer{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+
+
+=======
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/45/MtRedoubtedit1.jpg");
+  background-size: cover;*/
+}
+.timer{
+  padding : 200px;
+>>>>>>> origin/master
+}
