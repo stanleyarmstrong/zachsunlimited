@@ -6,13 +6,12 @@
   <meta name = "viewport" content="width= device-width , initial-scale = 1 ">
   <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
   <link rel = "icon" href = "http://www.metalinjection.net/wp-content/uploads/2014/06/Soviet-Sickle.png">
-  <!-- Latest compiled and minified CSS
+  <!-- Latest compiled and minified CSS-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Optional theme
+<!-- Optional theme-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
--->
 
 <!--Stanley's css file-->
 <style>
@@ -149,8 +148,8 @@ var leftTheHouse = 3;
 var gettingReady = 2;
 var justWokeUp = 1;
 var years;
-// var data = {{result}}; change back for live
-var data = 10; // for testing
+// var data = {{result}}; // change back for live
+ var data = 10; // for testing
 switch(data){
   case(dead):
     years = 0;
@@ -250,7 +249,7 @@ $("#doomBtn").click(articleSearch);
 
 function articleSearch(){
   document.getElementById('watSon').innerHTML = "<p>Our danger level today is : " + data + " </p>";
-  document.getElementById('dataDivHead').innerHTML = "<p>Read more based on keywords in today's headlines:</p> "
+  document.getElementById('dataDivHead').innerHTML = "<br><p>Articles based on today's headlines:</p>";
   document.getElementById('doomBtn').innerHTML = "Get More Articles";
 
   //document.getElementById('getADrink').innerHTML = "<p>Yeah, the world is ending. Grab a drink.</p><br><div data-bttnio-id="btn-7426e86f09c74bf5" data-bttnio-context='{ "user_location": { "latitude": 37.7749, "longitude": 122.4194 } }'></div>";
