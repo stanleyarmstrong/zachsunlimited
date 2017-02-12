@@ -6,27 +6,31 @@
   <meta name = "viewport" content="width= device-width , initial-scale = 1 ">
   <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
   <link rel = "icon" href = "http://www.metalinjection.net/wp-content/uploads/2014/06/Soviet-Sickle.png">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
 
 
 <!--Stanley's css file-->
 <style>
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+a{text-decoration: none;}
 
-html {
+h1{
+  text-align: center;
+}
+
+body{
+  text-align: center;
+  font-family: "Press Start 2P";
   background: url('https://upload.wikimedia.org/wikipedia/commons/4/45/MtRedoubtedit1.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-
-a{text-decoration: none;}
-
-body{
-  text-align: center;
-  font-family: "Press Start 2P";
 }
 button{
   font-family: "Press Start 2P";
@@ -39,7 +43,6 @@ button:hover{
 }
 .timer{
   margin: 20%;
-  text-align: center;
 }
 
 footer{
@@ -97,29 +100,30 @@ footer{
   animation-duration: 1s;
   animation-name: fadeInUp;
 }
+
 </style>
 
 </head>
 
 <body onload = "setInterval( timer, 1000)" >
   <div class = "timer">
-  <h1 id = "doomsday">Time Left In The World:</h1>
-  <h2 id = "timer" > </h2>
-  <h2>
-    Y:M:D:H:M:S
-  </h2>
+    <h1 id = "doomsday">Time Left In The World:</h1>
+    <p id = "timer" > </p>
+    <p>
+      Y:M:D:H:M:S
+    </p>
 
-  <p>How close are we to Doomsday?<p>
-  <div id="watSon"></div>
+    <p>How close are we to Doomsday?<p>
+    <div id="watSon"></div>
 
-  <button id="doomBtn">Ask our AI</button>
-  <div id="dataDivHead"></div>
-  <div id="dataDiv"></div>
-</div>
-<div data-bttnio-id="btn-7426e86f09c74bf5"
-     data-bttnio-context='{ "user_location": { "latitude": 37.7749, "longitude": 122.4194 } }'>
+    <div id="getADrink"></div>
 
-   </div>
+    <button id="doomBtn">Ask our AI</button>
+    <div id="dataDivHead"></div>
+    <div id="dataDiv"></div>
+  </div>
+
+<div data-bttnio-id="btn-7426e86f09c74bf5" data-bttnio-context='{ "user_location": { "latitude": 37.7749, "longitude": 122.4194 } }'></div>
 
 <footer>Built by Team ZaxUnlmtd | Powered by IBM Watson | Button | New York Times API | Wikipedia API | Background CC License Wikipedia</footer>
 
@@ -143,8 +147,8 @@ var leftTheHouse = 3;
 var gettingReady = 2;
 var justWokeUp = 1;
 var years;
-var data = {{result}};
-//var data = 10;
+// var data = {{result}}; change back for live
+var data = 10; // for testing
 switch(data){
   case(dead):
     years = 0;
@@ -250,6 +254,10 @@ function articleSearch(){
   document.getElementById('watSon').innerHTML = "<p>Our danger level today is : " + data + " </p>";
   document.getElementById('dataDivHead').innerHTML = "<p>Read more based on keywords in today's headlines:</p> "
   document.getElementById('doomBtn').innerHTML = "Get More Articles";
+
+  //document.getElementById('getADrink').innerHTML = "<p>Yeah, the world is ending. Grab a drink.</p><br><div data-bttnio-id="btn-7426e86f09c74bf5" data-bttnio-context='{ "user_location": { "latitude": 37.7749, "longitude": 122.4194 } }'></div>";
+  //document.getElementById('getADrink').innerHTML = "Yeah the world is ending. Grab a drink.<br><div data-bttnio-id=\"btn-7426e86f09c74bf5\" data-bttnio-context='{ \"user_location\": { \"latitude\": 37.7749, \"longitude\": 122.4194 } }'></div>";
+";
   var searchRandom = ["deadly", "earthquake", "philippines", "trump", "iranian", "president", "migrants", "muslim", "scottish", "myanmar", "wall", "supreme leader", "hong kong"]
   var searchTerm = searchRandom[Math.floor(Math.random()*13)];
   // searchTerm = $("#searchInput")[0].value; // this is with user input
@@ -280,7 +288,8 @@ function articleSearch(){
 
       // Creates information boxes with data
       for (var i = 0; i < data[1].length; i++) {
-        $("#dataDiv").append('<a href="' + data[3][i] + '" target="_blank"><div class="fadeInUp displayBox"><h2>' + data[1][i] + ' </h2><p>' + data[2][i] + '</p></div></a>');
+        $("#dataDiv").append('<a href="' + data[3][i] + '" target="_blank"><div class="fadeInUp well"><h2>' + data[1][i] + ' </h2><p>' + data[2][i] + '</p></div></a>');
+        // changed class from displayBox to well with bootstrap import
       }
     }
   });
@@ -299,6 +308,7 @@ window.ButtonWebConfig = {
 })(window, document, 'script', 'bttnio');
 </script>
 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
 
