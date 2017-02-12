@@ -5,6 +5,7 @@ import re
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 import os
+from flask import Flask, render_template
 stopwords = set(stopwords.words("english"))
 stemmer = PorterStemmer()
 from watson_developer_cloud import AuthorizationV1 as WatsonAuthorization
@@ -110,11 +111,13 @@ def get_value_and_words(date):
 
 app = Flask(__name__, static_url_path="/static", static_folder="static")
 
-@app.route("/" methods =["POST"])
+@app.route("/")
 def index():
-    day_rank, words = get_value_and_words('20070130')
-
-    return app.send_static_file("index.html")
+    # day_rank, words = get_value_and_words('20070130')
+    day_rank = 10
+    # return app.send_static_file("index.html")
+    return render_template('index.html', result = day_rank)
+    # return app.send_static_file("index.html")
 
 
 if __name__ == "__main__":
