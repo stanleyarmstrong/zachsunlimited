@@ -6,13 +6,13 @@
   <meta name = "viewport" content="width= device-width , initial-scale = 1 ">
   <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
   <link rel = "icon" href = "http://www.metalinjection.net/wp-content/uploads/2014/06/Soviet-Sickle.png">
-  <!-- Latest compiled and minified CSS -->
+  <!-- Latest compiled and minified CSS
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Optional theme -->
+<!-- Optional theme
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-
+-->
 
 <!--Stanley's css file-->
 <style>
@@ -121,9 +121,11 @@ footer{
     <button id="doomBtn">Ask our AI</button>
     <div id="dataDivHead"></div>
     <div id="dataDiv"></div>
+
+    <div data-bttnio-id="btn-7426e86f09c74bf5" data-bttnio-context='{ "user_location": { "latitude": 37.7749, "longitude": 122.4194 } }'></div>
+
   </div>
 
-<div data-bttnio-id="btn-7426e86f09c74bf5" data-bttnio-context='{ "user_location": { "latitude": 37.7749, "longitude": 122.4194 } }'></div>
 
 <footer>Built by Team ZaxUnlmtd | Powered by IBM Watson | Button | New York Times API | Wikipedia API | Background CC License Wikipedia</footer>
 
@@ -256,8 +258,8 @@ function articleSearch(){
   document.getElementById('doomBtn').innerHTML = "Get More Articles";
 
   //document.getElementById('getADrink').innerHTML = "<p>Yeah, the world is ending. Grab a drink.</p><br><div data-bttnio-id="btn-7426e86f09c74bf5" data-bttnio-context='{ "user_location": { "latitude": 37.7749, "longitude": 122.4194 } }'></div>";
-  //document.getElementById('getADrink').innerHTML = "Yeah the world is ending. Grab a drink.<br><div data-bttnio-id=\"btn-7426e86f09c74bf5\" data-bttnio-context='{ \"user_location\": { \"latitude\": 37.7749, \"longitude\": 122.4194 } }'></div>";
-";
+  //document.getElementById('getADrink').innerHTML = "Yeah the world is ending. Grab a drink.<br><div data-bttnio-id=\"btn-7426e86f09c74bf5\" data-bttnio-context=\'{ \"user_location\": { \"latitude\": 37.7749, \"longitude\": 122.4194 } }\'></div>";
+
   var searchRandom = ["deadly", "earthquake", "philippines", "trump", "iranian", "president", "migrants", "muslim", "scottish", "myanmar", "wall", "supreme leader", "hong kong"]
   var searchTerm = searchRandom[Math.floor(Math.random()*13)];
   // searchTerm = $("#searchInput")[0].value; // this is with user input
@@ -299,7 +301,6 @@ function articleSearch(){
 </script>
 
 <script>
-
 window.ButtonWebConfig = {
   applicationId: 'app-2bfccb0184db6ac5'
 };
