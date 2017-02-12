@@ -50,6 +50,10 @@ switch(data){
       years = 666;
       break;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> origin/master
 function timer(){
   document.getElementById('timer').innerHTML =   years + ":" + months + ":" + days + ":" + hours + ":" + minutes + ":" + seconds;
   seconds--;
@@ -57,27 +61,33 @@ function timer(){
   console.log("A second has passed.");
   if(seconds === 0 ){
     minutes--;
+    console.log(minutes);
     console.log("A minute has passed.");
+
     seconds = 60;
 
   }
   if(minutes === 0){
     hours--;
+    console.log(hours);
     console.log("An hour has passed.");
     minutes = 60;
   }
   if(hours === 0){
     days--;
+    console.log(days);
     console.log("A day has passed.")
     hours = 24;
   }
   if(days === 0){
     months--;
+    console.log(months);
     console.log("A month has passed.");
     days = 30;
   }
   if(months === 0){
     years--;
+    console.log(years);
     console.log("A year has passed.")
     months = 12;
   }
