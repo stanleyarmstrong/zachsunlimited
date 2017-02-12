@@ -154,11 +154,6 @@ var data = 10; // for testing
 switch(data){
   case(dead):
     years = 0;
-    months = 0;
-    days = 0;
-    hours = 0;
-    minutes = 0;
-    seconds = 30;
     break;
   case(deathBed):
     years  = 1;
@@ -198,15 +193,16 @@ function timer(){
   seconds--;
   console.log("")
   console.log("A second has passed.");
-  if(seconds === 0 && years === 0 && months === 0 && days === 0 && hours === 0 && minutes === 0){
+  /*if(seconds === 0 && years === 0 && months === 0 && days === 0 && hours === 0 && minutes === 0){
     seconds = 0;
+    years = 0;
     $(this).change(function(){
       $('body').css("background-color" , 'rgb(255,255,255)');
       $('#timer').hide();
       $('#timer').delay(1000);
       $('#timer').show();
-    })
-  }
+    });
+  }*/
   if(seconds === 0 ){
     minutes--;
     console.log(minutes);
