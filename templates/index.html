@@ -36,6 +36,7 @@ button{
   background-color: red;
   border: none;
   cursor: pointer;
+  margin: .5%
 }
 button:hover{
   background-color: gold;
@@ -46,6 +47,9 @@ button:hover{
 
 footer{
   color: white;
+}
+.hideDiv{
+  display: none;
 }
 </style>
 
@@ -112,16 +116,15 @@ footer{
       Y:M:D:H:M:S
     </p>
 
-    <p>How close are we to Doomsday?<p>
-    <div id="watSon"></div>
+    <p id="watSon">How close are we to Doomsday?</p>
 
     <div id="getADrink"></div>
+    <div id="hideDivBtn" class="hideDiv" data-bttnio-id="btn-7426e86f09c74bf5" data-bttnio-context='{ "user_location": { "latitude": 37.7749, "longitude": 122.4194 } }'></div>
 
-    <button id="doomBtn">Ask our AI</button>
     <div id="dataDivHead"></div>
-    <div id="dataDiv"></div>
+    <button id="doomBtn">Ask our AI</button>
 
-    <div data-bttnio-id="btn-7426e86f09c74bf5" data-bttnio-context='{ "user_location": { "latitude": 37.7749, "longitude": 122.4194 } }'></div>
+    <div id="dataDiv"></div>
 
   </div>
 
@@ -148,8 +151,8 @@ var leftTheHouse = 3;
 var gettingReady = 2;
 var justWokeUp = 1;
 var years;
-// var data = {{result}}; // change back for live
- var data = 10; // for testing
+var data = {{result}}; // change back for live
+//var data = 10; // for testing
 switch(data){
   case(dead):
     years = 0;
@@ -251,16 +254,10 @@ function articleSearch(){
   document.getElementById('watSon').innerHTML = "<p>Our danger level today is : " + data + " </p>";
   document.getElementById('dataDivHead').innerHTML = "<br><p>Articles based on today's headlines:</p>";
   document.getElementById('doomBtn').innerHTML = "Get More Articles";
-
-  //document.getElementById('getADrink').innerHTML = "<p>Yeah, the world is ending. Grab a drink.</p><br><div data-bttnio-id="btn-7426e86f09c74bf5" data-bttnio-context='{ "user_location": { "latitude": 37.7749, "longitude": 122.4194 } }'></div>";
-//<<<<<<< HEAD
-  //document.getElementById('getADrink').innerHTML = "Yeah the world is ending. Grab a drink.<br><div data-bttnio-id=\"btn-7426e86f09c74bf5\" data-bttnio-context='{ \"user_location\": { \"latitude\": 37.7749, \"longitude\": 122.4194 } }'></div>";
-//=======
-  //document.getElementById('getADrink').innerHTML = "Yeah the world is ending. Grab a drink.<br><div data-bttnio-id=\"btn-7426e86f09c74bf5\" data-bttnio-context=\'{ \"user_location\": { \"latitude\": 37.7749, \"longitude\": 122.4194 } }\'></div>";
-//>>>>>>> ff2416a88606f53f23a576f60277866a8934c2cb
-
-  var searchRandom = ["deadly", "earthquake", "philippines", "trump", "iranian", "president", "migrants", "muslim", "scottish", "myanmar", "wall", "supreme leader", "hong kong"]
-  var searchTerm = searchRandom[Math.floor(Math.random()*13)];
+  document.getElementById('getADrink').innerHTML = "Yeah the world is ending. Grab a beer. <br>";
+  $("#hideDivBtn").toggleClass("hideDiv");
+  var searchRandom = ["deadly", "earthquake", "trump", "iranian", "president", "migrants", "muslim", "scottish", "myanmar", "wall", "supreme leader", "hong kong"]
+  var searchTerm = searchRandom[Math.floor(Math.random()*12)];
   // searchTerm = $("#searchInput")[0].value; // this is with user input
   if (!searchTerm) {
     window.alert("No Search Query Detected");
@@ -289,7 +286,7 @@ function articleSearch(){
 
       // Creates information boxes with data
       for (var i = 0; i < data[1].length; i++) {
-        $("#dataDiv").append('<a href="' + data[3][i] + '" target="_blank"><div class="fadeInUp well"><h2>' + data[1][i] + ' </h2><p>' + data[2][i] + '</p></div></a>');
+        $("#dataDiv").append('<a href="' + data[3][i] + '" target="_blank"><div class="fadeInUp well"><p style="color:black">' + data[1][i] + ' </p><p>' + data[2][i] + '</p></div></a>');
         // changed class from displayBox to well with bootstrap import
       }
     }
