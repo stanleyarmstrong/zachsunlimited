@@ -7,6 +7,9 @@
   <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
   <link rel = "icon" href = "http://www.metalinjection.net/wp-content/uploads/2014/06/Soviet-Sickle.png">
 
+
+
+
 <!--Stanley's css file-->
 <style>
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
@@ -25,9 +28,17 @@ body{
   text-align: center;
   font-family: "Press Start 2P";
 }
+button{
+  font-family: "Press Start 2P";
+  background-color: red;
+  border: none;
+  cursor: pointer;
+}
+button:hover{
+  background-color: gold;
+}
 .timer{
-  padding : 200px;
->>>>>>> origin/master
+  margin: 20%;
 }
 </style>
 
@@ -93,9 +104,16 @@ body{
     Y:M:D:H:M:S
   </h2>
   <div id="watSon"></div>
-  <button id="doomBtn">How Close Are We to Doomsday? {{result}}</button>
+  <p>How close are we to Doomsday?<p>
+
+  <button id="doomBtn">Ask our AI</button>
   <div id="dataDiv"></div>
 </div>
+
+<footer>Built by Team ZaxUnlmtd | Powered by IBM Watson | Button | New York Times API | Wikipedia API </footer>
+
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
