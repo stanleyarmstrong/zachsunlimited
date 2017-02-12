@@ -39,6 +39,7 @@ button:hover{
 }
 .timer{
   margin: 20%;
+  text-align: center;
 }
 
 footer{
@@ -107,10 +108,12 @@ footer{
   <h2>
     Y:M:D:H:M:S
   </h2>
-  <div id="watSon"></div>
+
   <p>How close are we to Doomsday?<p>
+  <div id="watSon"></div>
 
   <button id="doomBtn">Ask our AI</button>
+  <div id="dataDivHead"></div>
   <div id="dataDiv"></div>
 </div>
 <div data-bttnio-id="btn-7426e86f09c74bf5"
@@ -119,11 +122,6 @@ footer{
    </div>
 
 <footer>Built by Team ZaxUnlmtd | Powered by IBM Watson | Button | New York Times API | Wikipedia API | Background CC License Wikipedia</footer>
-
-
-<!-- two feature notes
-- button changes
-- header before article -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -146,6 +144,7 @@ var gettingReady = 2;
 var justWokeUp = 1;
 var years;
 var data = {{result}};
+//var data = 10;
 switch(data){
   case(dead):
     years = 0;
@@ -186,10 +185,7 @@ switch(data){
       years = 666;
       break;
 }
-/*<<<<<<< HEAD
 
-=======
->>>>>>> origin/master*/
 function timer(){
   console.log("Passed in data: " + data)
   document.getElementById('timer').innerHTML =   years + ":" + months + ":" + days + ":" + hours + ":" + minutes + ":" + seconds;
@@ -248,11 +244,14 @@ function timer(){
 
 <!-- <script src="doomArticles.js"></script> -->
 <script>
-$("#doomBtn").click(function(){
-  document.getElementById('watSon').innerHTML = "<p>According to IBM's Watson, our danger level today is : " + data + " </p>";
+$("#doomBtn").click(articleSearch);
 
-  var searchRandom = ["deadly", "earthquake", "philippines", "trump", "iranian", "president", "slap", "wrist", "migrants", "muslim", "scottish", "popes", "pray", "myanmar", "wall", "supreme leader", "hong kong"]
-  var searchTerm = searchRandom[Math.floor(Math.random()*17)];
+function articleSearch(){
+  document.getElementById('watSon').innerHTML = "<p>Our danger level today is : " + data + " </p>";
+  document.getElementById('dataDivHead').innerHTML = "<p>Read more based on keywords in today's headlines:</p> "
+  document.getElementById('doomBtn').innerHTML = "Get More Articles";
+  var searchRandom = ["deadly", "earthquake", "philippines", "trump", "iranian", "president", "migrants", "muslim", "scottish", "myanmar", "wall", "supreme leader", "hong kong"]
+  var searchTerm = searchRandom[Math.floor(Math.random()*13)];
   // searchTerm = $("#searchInput")[0].value; // this is with user input
   if (!searchTerm) {
     window.alert("No Search Query Detected");
@@ -286,7 +285,8 @@ $("#doomBtn").click(function(){
     }
   });
 // end of search button function
-  });
+  };
+
 </script>
 
 <script>
