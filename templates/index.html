@@ -89,54 +89,16 @@ body{
   <div class = "timer">
   <h1 id = "doomsday">Time Left In The World:</h1>
   <h2 id = "timer" > </h2>
-  <h2 >
+  <h2>
     Y:M:D:H:M:S
   </h2>
+  <div id="watSon"></div>
   <button id="doomBtn">How Close Are We to Doomsday? {{result}}</button>
   <div id="dataDiv"></div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<!-- <script src="doomArticles.js"></script> -->
-<script>
-$("#doomBtn").click(function(){
-  var searchRandom = ["deadly", "earthquake", "philippines", "trump", "iranian", "president", "slap", "wrist", "migrants", "muslim", "scottish", "popes", "pray", "myanmar", "wall", "supreme leader", "hong kong"]
-  var searchTerm = searchRandom[Math.floor(Math.random()*17)];
-  // searchTerm = $("#searchInput")[0].value; // this is with user input
-  if (!searchTerm) {
-    window.alert("No Search Query Detected");
-    return;
-  }
 
-  $.ajax({
-    url: 'https://en.wikipedia.org/w/api.php',
-    dataType: 'jsonp',
-    data: {
-      action: 'opensearch',
-      search: searchTerm,
-      limit: 10
-      },
-    success: function(data) {
-      $("#dataDiv").html('');
-      if(!data[1][0]){
-        $("#dataDiv").append('<div class="fadeInUp displayBox"><h2>' + 'No Data Returned' + ' </h2><p>' + 'Nothing related to this search term was found in the Wikipedia database. Please try a different search term.' + '</p></div></a>');
-      }
-
-      /* Troubleshooting
-      console.log(data); //
-      console.log(data[1][0]); //Title
-      console.log(data[2][0]); //Summary
-      console.log(data[3][0]); //Link */
-
-      // Creates information boxes with data
-      for (var i = 0; i < data[1].length; i++) {
-        $("#dataDiv").append('<a href="' + data[3][i] + '" target="_blank"><div class="fadeInUp displayBox"><h2>' + data[1][i] + ' </h2><p>' + data[2][i] + '</p></div></a>');
-      }
-    }
-  });
-// end of search button function
-  });
-</script>
 <!-- <script src = "timer.js"> </script> -->
 <script>
 var minutes = 60;
@@ -196,7 +158,7 @@ switch(data){
 =======
 >>>>>>> origin/master*/
 function timer(){
-  console.log(data)
+  console.log("Passed in data: " + data)
   document.getElementById('timer').innerHTML =   years + ":" + months + ":" + days + ":" + hours + ":" + minutes + ":" + seconds;
   seconds--;
   console.log("")
@@ -237,7 +199,48 @@ function timer(){
 };
 </script>
 
+<!-- <script src="doomArticles.js"></script> -->
+<script>
+$("#doomBtn").click(function(){
+  document.getElementById('watSon').innerHTML = "<p>According to IBM's Watson, our danger level today is : " + data + " </p>";
 
+  var searchRandom = ["deadly", "earthquake", "philippines", "trump", "iranian", "president", "slap", "wrist", "migrants", "muslim", "scottish", "popes", "pray", "myanmar", "wall", "supreme leader", "hong kong"]
+  var searchTerm = searchRandom[Math.floor(Math.random()*17)];
+  // searchTerm = $("#searchInput")[0].value; // this is with user input
+  if (!searchTerm) {
+    window.alert("No Search Query Detected");
+    return;
+  }
+
+  $.ajax({
+    url: 'https://en.wikipedia.org/w/api.php',
+    dataType: 'jsonp',
+    data: {
+      action: 'opensearch',
+      search: searchTerm,
+      limit: 10
+      },
+    success: function(data) {
+      $("#dataDiv").html('');
+      if(!data[1][0]){
+        $("#dataDiv").append('<div class="fadeInUp displayBox"><h2>' + 'No Data Returned' + ' </h2><p>' + 'Nothing related to this search term was found in the Wikipedia database. Please try a different search term.' + '</p></div></a>');
+      }
+
+      /* Troubleshooting
+      console.log(data); //
+      console.log(data[1][0]); //Title
+      console.log(data[2][0]); //Summary
+      console.log(data[3][0]); //Link */
+
+      // Creates information boxes with data
+      for (var i = 0; i < data[1].length; i++) {
+        $("#dataDiv").append('<a href="' + data[3][i] + '" target="_blank"><div class="fadeInUp displayBox"><h2>' + data[1][i] + ' </h2><p>' + data[2][i] + '</p></div></a>');
+      }
+    }
+  });
+// end of search button function
+  });
+</script>
 
 
 </body>
