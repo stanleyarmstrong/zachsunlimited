@@ -148,7 +148,12 @@ var years;
 var data = {{result}};
 switch(data){
   case(dead):
-    years = 1;
+    years = 0;
+    months = 0;
+    days = 0;
+    hours = 0;
+    minutes = 0;
+    seconds = 30;
     break;
   case(deathBed):
     years  = 5;
@@ -191,12 +196,23 @@ function timer(){
   seconds--;
   console.log("")
   console.log("A second has passed.");
+  if(seconds === 0 && years === 0 && months === 0 && days === 0 && hours === 0 && minutes === 0){
+    seconds = 0;
+    $(this).change(function(){
+      $('body').css("background-color" , 'rgb(255,255,255)');
+      $('#timer').hide();
+      $('#timer').delay(1000);
+      $('#timer').show();
+    })
+  }
   if(seconds === 0 ){
     minutes--;
     console.log(minutes);
     console.log("A minute has passed.");
 
+
     seconds = 60;
+
 
   }
   if(minutes === 0){
@@ -205,6 +221,8 @@ function timer(){
     console.log("An hour has passed.");
     minutes = 60;
   }
+
+
   if(hours === 0){
     days--;
     console.log(days);
@@ -217,12 +235,13 @@ function timer(){
     console.log("A month has passed.");
     days = 30;
   }
-  if(months === 0){
+  if(months === 0 ){
     years--;
     console.log(years);
     console.log("A year has passed.")
     months = 12;
   }
+
 
 };
 </script>
